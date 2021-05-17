@@ -31,17 +31,27 @@ function shuffle(deck) {
   }
   return deck
 }
+////////////////////////////////////////////////////////////////////////////////
+function Deal () {
 
-function Player({name}) {
-  this.name = name;
 }
 
-let alien = new Player({
-  name: 'Alien',
-})
 
-let predator = new Player({
-  name: 'Predator',
-})
+function Player(name) {
+  this.name = name
+  this.hand = []
+}
 
-console.log(`${alien.name} vs ${predator.name}`)
+
+function Game({player1, player2} = {}) {
+  this.player1 = player1,
+  this.player2 = player2
+}
+
+let player1 = prompt('What is your name?');
+let player2 = prompt('WHat is your name?');
+
+let game = new Game({player1, player2});
+
+console.log(game.player1);
+console.log(game.player2);
